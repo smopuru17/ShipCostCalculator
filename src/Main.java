@@ -1,17 +1,37 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner in = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        double shippingCost = 0;
+        double fee = 0;
+        double total = 0;
+        System.out.print("Please enter the shipping cost: ");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        if(in.hasNextInt())
+        {
+
+            shippingCost = in.nextInt();
+
+            if(shippingCost >= 100) {
+
+             System.out.println("You have no shipping fee because your items are more that $100");
+            }else{
+                System.out.println("Your item is less then $100 so you have to pay a 2% shipping fee!");
+                fee = shippingCost * 0.02;
+                total = shippingCost + fee;
+                System.out.println("You have a " + fee + " shipping fee on a " + shippingCost + " dollar item so your total comes out to " + total);
+            }
+
+
+        }else{
+
+            System.out.println("Please execute the code correctly!");
         }
+
+
+
+
     }
 }
